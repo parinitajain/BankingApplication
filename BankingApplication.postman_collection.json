@@ -1,0 +1,105 @@
+{
+	"info": {
+		"name": "BankingApplication",
+		"_postman_id": "38c46df7-0c1a-7d7b-44df-414e31ae15eb",
+		"description": "My banking Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"givenName\":\"Ajay\",\n\t\"password\":\"pari\",\n\t\"type\":\"Current\",\n\t\"lastName\":\"Singh\",\n\t\"email\":\"ajay.singh@gmail.com\",\n\t\"address\":\"DLF\",\n\t\"panNumber\":\"AOPJ4829B\",\n\t\"city\":\"Gurgaon\",\n\t\"state\":\"HR\",\n\t\"pinCode\":700006\n\t\n\t\n}"
+				},
+				"url": "http://localhost:8050/BankingApplication/abcbank/userManagement/createUser",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":1,\n\t\"password\":\"pari\"\n\t\n\t\n}"
+				},
+				"url": "http://localhost:8050/BankingApplication/abcbank/userManagement/login",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Parinita\",\n\t\"password\":\"pari\"\n\t\n\t\n}"
+				},
+				"url": "http://localhost:8050/BankingApplication/abcbank/userManagement/getUser/1",
+				"description": "Pass username in request url"
+			},
+			"response": []
+		},
+		{
+			"name": "Debit Balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountNumber\":\"Singh_939\",\n\t\"balance\":100\n\t\n\t\n}"
+				},
+				"url": "http://localhost:8050/BankingApplication/abcbank/userManagement/deductBalance/1",
+				"description": "Account number and Amount is mandatory in request"
+			},
+			"response": []
+		},
+		{
+			"name": "Credit Balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountNumber\":\"Singh_939\",\n\t\"balance\":1000\n\t\n\t\n}"
+				},
+				"url": "http://localhost:8050/BankingApplication/abcbank/userManagement/addBalance/1",
+				"description": "Account Number and Amount is mandatory"
+			},
+			"response": []
+		}
+	]
+}
