@@ -65,7 +65,7 @@ public class MyBankingImpl implements MyBanking {
 	public Response creditBalance(int id, UserAccount userRequest) {
 		User userDto = userDao.getUserById(id);
 		UserResponse user = new UserResponse();
-		if (userDto != null && userRequest.getAccountNumber() != null
+		if (userDto != null && userRequest.getBalance()>0 && userRequest.getAccountNumber() != null
 				&& userRequest.getAccountNumber().equalsIgnoreCase(userDto.getAcc_num())) {
 			float balance = userDto.getBalance();
 			balance = balance + userRequest.getBalance();
@@ -89,7 +89,7 @@ public class MyBankingImpl implements MyBanking {
 	public Response debitBalance(int id, UserAccount userRequest) {
 		User userDto = userDao.getUserById(id);
 		UserResponse user = new UserResponse();
-		if (userDto != null && userRequest.getAccountNumber() != null
+		if (userDto != null && userRequest.getBalance()>0&& userRequest.getAccountNumber() != null
 				&& userRequest.getAccountNumber().equalsIgnoreCase(userDto.getAcc_num())) {
 			float balance = userDto.getBalance();
 			if (balance >= userRequest.getBalance()) {
