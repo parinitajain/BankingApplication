@@ -1,0 +1,1 @@
+CREATE TABLE USER(id INTEGER IDENTITY, first_name VARCHAR(50),last_name VARCHAR(50),password VARCHAR(50), email VARCHAR(50),pan_number  VARCHAR(10),address VARCHAR(40),city VARCHAR(35),state_id VARCHAR(2),pincode integer,acc_num VARCHAR(50),acc_type VARCHAR(50),balance DECIMAL);
